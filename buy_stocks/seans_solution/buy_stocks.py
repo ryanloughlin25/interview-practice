@@ -8,7 +8,6 @@ class BuyStocksSolver:
             return 0
         max_profit = price_list[1] - price_list[0]
         min_val = min(price_list[:2])
-        max_val = max(price_list[:2])
         for i in range(2, len(price_list)):
             value = price_list[i]
             if value < min_val:
