@@ -7,9 +7,7 @@ def buy_stock(prices):
 
     for price in prices:
         current_profit = price - buy_price
-        if current_profit > max_profit:
-            max_profit = current_profit
-        if price < buy_price:
-            buy_price = price
+        max_profit = max(current_profit, max_profit)
+        buy_price = min(price, buy_price)
 
     return max_profit
