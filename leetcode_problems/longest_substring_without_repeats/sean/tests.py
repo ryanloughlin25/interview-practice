@@ -8,7 +8,6 @@ class LongestSubstringTestCase(unittest.TestCase):
 
     def test_weird_case(self):
         string = 'pwwkew'
-        import pdb;pdb.set_trace()
         self.assertEqual(get_longest_length(string), 3)
 
     def test_optimal_contains_prefix(self):
