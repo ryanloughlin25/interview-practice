@@ -32,11 +32,10 @@ class Solution:
             return array1_median
 
     def find_median_single_array(self, array):
+        middle = len(array) // 2
         if len(array) % 2 == 0:
-            middle = len(array) // 2
             return ((array[middle - 1] + array[middle]) / 2.0)
         else:
-            middle = len(array) // 2
             return array[middle]
 
     def merge_sorted_arrays(self, array1, array2):
