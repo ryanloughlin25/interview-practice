@@ -9,6 +9,12 @@ class OverlappingRangesTestCase(unittest.TestCase):
         result = find_range_set(ranges)
         self.assertEqual(result, target)
 
+    def test_one_range(self):
+        ranges = [[4, 15]]
+        target = [[4, 15]]
+        result = find_range_set(ranges)
+        self.assertEqual(result, target)
+
     def test_example_case(self):
         ranges = [[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]]
         target = [[0, 1], [3, 8], [9, 12]]
