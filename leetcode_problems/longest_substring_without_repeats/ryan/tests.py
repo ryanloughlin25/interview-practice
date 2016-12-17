@@ -18,6 +18,9 @@ class LongestSubstringTestCase(unittest.TestCase):
     def test_hard_repeat(self):
         self.assertEqual(longest_substring('dvdf'), 'vdf')
 
+    def test_sean_gave_me(self):
+        self.assertEqual(longest_substring('pwwkew'), 'kew')
+
 
 if __name__ == '__main__':
     unittest.main()
