@@ -1,17 +1,17 @@
-def lengthOfLongestSubstring(string):
+def get_longest_length(string):
     """
     :type s: str
     :rtype: int
     """
-    char_set = set()
+    char_dict = {}
     max_len = 0
-    for i in range(len(string)):
-        for char in string[i:]:
-            if char in char_set:
-                max_len = max(max_len, len(char_set))
-                char_set = set()
-                break
-            else:
-                char_set.add(char)
-                max_len = max(max_len, len(char_set))
+    j = 0
+    while j < len(string):
+        char = string[j]
+        if char in char_dict:
+            char_dict.remove(char)
+        else:
+            char_dict.add(char)
+            max_len = max(max_len, len(char_set))
+            j += 1
     return max_len
