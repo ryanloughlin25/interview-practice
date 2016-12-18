@@ -1,0 +1,1 @@
+Given a list of integers return a list of integers of the same length such that each index of the output list contains the product of all elements in the input list except for the element at that index.  Do not use division in your solution.  It should be O(n) time and space.
