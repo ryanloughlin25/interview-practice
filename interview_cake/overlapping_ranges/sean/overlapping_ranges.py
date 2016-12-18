@@ -11,6 +11,6 @@ def find_range_set(ranges):
             current_start = interval[0]
             current_end = interval[1]
         else:
-            current_end = interval[1]
+            current_end = max(current_end, interval[1])
     merged_ranges.append([current_start, current_end])
     return merged_ranges
