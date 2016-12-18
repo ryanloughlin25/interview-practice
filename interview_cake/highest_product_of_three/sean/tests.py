@@ -45,7 +45,7 @@ class HighestProductTestCase(unittest.TestCase):
         self.assertEqual(result, target)
 
     def test_repeating_lowest(self):
-        integers[1,4,5,3,2,3,3,3]
+        integers = [1,4,5,3,2,3,3,3]
         target = 60
         result = find_three(integers)
         self.assertEqual(result, target)
