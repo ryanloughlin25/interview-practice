@@ -1,0 +1,10 @@
+Find the intersection of two rectangles
+You can assume the input will define valid rectangles
+You can assume that every edge (of a rectangle) will be parallel with either the x or y axis
+Each rectangle will be defined as a dictionary with the following format:
+{
+    'left_x': 1,
+    'bottom_y': 5,
+    'width': 10,
+    'height': 4,
+}
