@@ -1,5 +1,3 @@
-from code import interact
-
 def find_num_combos(coins, max_val):
     if not coins or max_val < 0:
         raise NotImplementedError
@@ -9,11 +7,10 @@ def find_num_combos(coins, max_val):
     while val <= max_val:
         for coin in coins:
             prev_val = val - coin
-            if val - coin < 0:
+            if prev_val < 0:
                 continue
             values[val] += values[prev_val]
         val += 1
-    interact(local=locals())
     return values[max_val]
 
 
