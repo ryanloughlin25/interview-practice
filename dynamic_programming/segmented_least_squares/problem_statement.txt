@@ -1,0 +1,31 @@
+Segmented Least Squares:
+
+Given a set of (x, y) points P, there is a closed-form solution for a
+'line of best fit' or 'line of minimum error' which can be derived using the
+least squares fitting method. However, it is not always the case that a set of
+points is best represented by a single line. In general, the more lines one is
+willing to use to fit a set of points, the lower the total error can be made,
+with the extreme case being one line for every pair of adjacent points, in
+which case the total error is zero, since all points lie exactly along their
+line(s). 
+
+In order to algorithmically find a happy medium between underfitting a set of
+points with a single line, or overfitting with many lines, we can impose a
+'penalty' for each additional line, so that the total cost of fitting a number
+of lines k to a set of n points is given by:
+
+Cost = k*c + sum([error(l, {pi, ..., pj}) for l in lines])
+
+where error(l, {pi, ..., pj}) is the error of line l with respect to the points
+pi through pj, and c is the penalty incurred for each additional line.
+
+If we are given a set of points P = {(x1, y1), (x2, y2),..., (xn, yn)} with
+x1 < x2 < ... xn, we can then fit lines to P by partitioning P into multiple
+segments such that each segment contains points pi through pj for some i <= j. 
+Then for each segment S in our partition of P, we can find the line minimizing
+the error with respect to the points in S, and compute the cost of the
+partition as shown above. 
+
+With dynamic programming, the minimum cost partition can be found in O(n^2)
+time if the error() function is assumed to take constant time, or O(n^3) time
+if error() is treated as O(n).

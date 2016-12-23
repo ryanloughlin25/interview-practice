@@ -1,0 +1,1 @@
+Given a set of intervals consisting of a start time, and end time, and a value, return the subset of intervals of maximum possible total value which do not overlap.

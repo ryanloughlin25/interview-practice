@@ -1,0 +1,8 @@
+Simplified Knapsack Problem:
+Given a container of capacity W and a set of items i = {1, 2, ..., n} each of
+size w_i, find the subset of items with highest total weight that fit in the
+container. 
+
+Knapsack Problem:
+Consider that each item i additionally has a value v_i, and find
+the subset of items of maximum total value that fits in the container. 
