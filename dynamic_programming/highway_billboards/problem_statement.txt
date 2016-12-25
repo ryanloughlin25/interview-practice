@@ -1,0 +1,9 @@
+You are in charge of putting up billboards for your company on a stretch of
+highway. There are n possible locations for billboards L = {l1, l2, ..., ln}
+and each location has an associated revenue ri that you would receive from a
+billboard in that location. However, zoning regulations (or whatever they have
+for highways) stipulate that you cannot place billboards closer than 5 miles
+from any other billboard. Given a set of locations L and their revenues, and
+assuming that the locations are sorted in the order they appear on the highway
+(say, from east to west), return valid set of locations with highest total
+revenue in linear time.
