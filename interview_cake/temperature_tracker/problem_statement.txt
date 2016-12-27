@@ -1,0 +1,5 @@
+Write a class with 5 functions - insert, max, min, mean, mode.
+The data will be integers in the range [0, 110].
+Insert does not need to return anything, mean should return a float, and the other functions should return integers.
+If there are multiple modes then you can return any of them.
+All 5 functions should be O(1) time and the entire class should use O(1) space.
