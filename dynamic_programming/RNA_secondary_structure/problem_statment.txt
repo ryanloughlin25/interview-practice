@@ -1,0 +1,8 @@
+Given an RNA strand represented by a string S of n symbols from the alphabet {A, C, G, U}, find the substructre that results in the folded RNA strand having the maximum free energy. The substructre with maximum free energy is defined as the configuration with the most bonds, subject to the following constraints:
+
+    * No sharp turns: The ends of each base pair in S are separated by at least
+      four intervening bases, i.e. for any pair (i, j), i < j - 4.
+    * Non-crossing: If (i, j) and (k, l) are two pairs in S, then you cannot
+      have i < k < j < l.
+    * No base appears in more than one pair.
+    * The elements of any pair in S consist of either {A, U} or {C, G}.
