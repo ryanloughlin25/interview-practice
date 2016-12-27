@@ -13,12 +13,12 @@ class MakingChangeTestCase(unittest.TestCase):
     def test_negative_ammount(self):
         total = -5
         coins = [1, 2, 3]
-        self.assertRaises(NotImplementedError, find_num_combos, coins, total)
+        self.assertRaises(RuntimeError, find_num_combos, coins, total)
 
     def test_no_coins(self):
         total = 5
         coins = []
-        self.assertRaises(NotImplementedError, find_num_combos, coins, total)
+        self.assertRaises(RuntimeError, find_num_combos, coins, total)
 
     def test_example_case(self):
         total = 4

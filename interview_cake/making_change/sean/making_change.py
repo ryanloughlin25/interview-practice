@@ -1,6 +1,10 @@
 def find_num_combos(coins, max_val):
-    if not coins or max_val < 0:
-        raise NotImplementedError
+    if max_val < 0:
+        raise RuntimeError("Target value must be > 0")
+    if not coins:
+        raise RuntimeError(
+            "Coins must contain at least one non-zero denomination"
+        )
     values = [0]*(max_val + 1)
     values[0] = 1
     val = 0
