@@ -7,14 +7,12 @@ def find_num_combos(coins, max_val):
         )
     values = [0]*(max_val + 1)
     values[0] = 1
-    val = 0
-    while val <= max_val:
-        for coin in coins:
+    for coin in coins:
+        val = coin
+        while val <= max_val:
             prev_val = val - coin
-            if prev_val < 0:
-                continue
             values[val] += values[prev_val]
-        val += 1
+            val += 1
     return values[max_val]
 
 
