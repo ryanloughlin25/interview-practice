@@ -28,16 +28,15 @@ def max_profit_faster(stock_prices):
 
     open_price = stock_prices[0]
     low_price = open_price
-    high_price = open_price
-    max_profit = high_price - low_price
+    max_profit = 0
 
     for price in stock_prices:
-        sell_higher = price - low_price > max_profit
+        current_price_profit = price - low_price
+        sell_higher = current_price_profit > max_profit
         buy_lower = price < low_price
 
         if sell_higher:
-            max_profit = price - low_price
-            high_price = price
+            max_profit = current_price_profit
         if buy_lower:
             low_price = price
 
