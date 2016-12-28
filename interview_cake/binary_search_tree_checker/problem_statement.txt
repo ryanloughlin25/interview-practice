@@ -1,0 +1,2 @@
+Write a function which accepts a binary tree as input and returns returns true or false.The function should return true if and only if the binary tree is a binary search tree.
+O(n) time and space.
