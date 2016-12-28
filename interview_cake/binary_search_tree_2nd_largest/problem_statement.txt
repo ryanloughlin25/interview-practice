@@ -1,0 +1,3 @@
+Write a function which accepts a binary search tree as input and returns the second largest element in the tree.
+O(n) time and O(1) space.
+Hint: regarding the time complexity, it's O(n) worst case and O(logn) if the tree is balanced.  More specifically, it's O(h) time where h is the height of the tree.
