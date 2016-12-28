@@ -11,6 +11,8 @@ class TempTracker:
         self.count_dict = defaultdict(int)
 
     def insert(self, temp):
+        if temp not in range(0, 111):
+            raise ValueError("Temperature not in range [0, 110]")
         self._update_bounds(temp)
         self._update_mean(temp)
         self._update_count_dict(temp)
