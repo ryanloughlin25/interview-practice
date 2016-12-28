@@ -1,0 +1,3 @@
+Write a function that accepts a binary tree (not binary search tree, just binary tree) as input and returns true or false.
+The function should return true if and only if the tree is balanced, which means that the difference in depth between any two leaf nodes is at most 1.
+O(n) time and space.
