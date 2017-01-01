@@ -10,12 +10,10 @@ def balanced_binary_tree(node):
 
     while not q.empty():
         node, depth = q.get()
-        if node.left:
-            q.put((node.left, depth + 1))
-        if node.right:
-            q.put((node.right, depth + 1))
-
-        if not node.left and not node.right:
+        children = list(filter(None, [node.left, node.right]))
+        for child in children:
+            q.put((child, depth + 1))
+        if not children:
             min_depth = min(min_depth, depth)
             max_depth = max(max_depth, depth)
 
