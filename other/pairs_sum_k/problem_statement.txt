@@ -1,0 +1,14 @@
+Given a list of n integers and a number k, find the distinct pairs in the list that sum to k.
+
+Examples:
+l = [3, 3, 4, 4]
+k = 7
+pairs = [(3, 4)]
+
+l = [0, 0]
+k = 0
+pairs = [(0, 0)]
+
+l = [1, 2, 5, -2, 4, -2]
+k = 3
+pairs = [(1, 2), (5, -2)]
