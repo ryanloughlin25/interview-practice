@@ -1,5 +1,16 @@
 import sys
 
+move_transforms = [
+    (2, 1),
+    (2, -1),
+    (-2, 1),
+    (-2, -1),
+    (1, 2),
+    (-1, 2),
+    (1, -2),
+    (-1, -2),
+]
+
 def find_path_length(src, dest):
     explored, visible, unexplored = initialize_graph(src)
     while dest not in explored:
@@ -34,37 +45,26 @@ def initialize_graph(src):
     return explored, visible, unexplored
 
 def find_moves(start):
-    moves = []
-    if start in range(16, 64):
-        if start not in range(0, 64, 8):
-            up_left = start - (8*2) - 1
-            moves.append(up_left)
-        if start not in range(7, 64, 8):
-            up_right = start - (8*2) + 1
-            moves.append(up_right)
-
-    if start not in range(6, 64, 8) + range(7, 64, 8):
-        if start not in range(0, 8):
-            right_up = start + 2 - 8
-            moves.append(right_up)
-        if start not in range(56, 64):
-            right_down = start + 2 + 8
-            moves.append(right_down)
-
-    if start in range(0, 48):
-        if start not in range(7, 64, 8):
-            down_right = start + (8*2) + 1
-            moves.append(down_right)
-        if start not in range(0, 64, 8):
-            down_left = start + (8*2) - 1
-            moves.append(down_left)
-
-    if start not in range(0, 64, 8) + range(1, 64, 8):
-        if start not in range(56, 64):
-            left_down = start - 2 + 8
-            moves.append(left_down)
-        if start not in range(0, 8):
-            left_up = start - 2 - 8
-            moves.append(left_up)
-
+    coords_list = []
+    coords = square_to_coords(start)
+    for transform in move_transforms:
+        new_coords = [sum(nums) for nums in zip(coords, transform)]
+        coords_list.append(new_coords)
+    moves = [coords_to_square(loc) for loc in coords_list if is_valid(loc)]
     return moves
+
+def is_valid(coords):
+    return all(map(in_bounds, coords))
+
+def in_bounds(num):
+    return num < 8 and num >= 0
+
+def square_to_coords(position):
+    column = position % 8
+    row = position / 8
+    coords = (column, row)
+    return coords
+
+def coords_to_square(coords):
+    square = (coords[1] - 1) * 8 + coords[0]
+    return square
